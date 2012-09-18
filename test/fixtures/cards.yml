@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  issuer_id: 1
+  name: MyString
+  rewards_type: MyString
+  general_rate: 1.5
+  threshold_amount: 1
+  threshold_rate: 1.5
+
+two:
+  issuer_id: 1
+  name: MyString
+  rewards_type: MyString
+  general_rate: 1.5
+  threshold_amount: 1
+  threshold_rate: 1.5

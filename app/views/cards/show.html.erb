@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Issuer:</b>
+  <%= @card.issuer_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @card.name %>
+</p>
+
+<p>
+  <b>Rewards type:</b>
+  <%= @card.rewards_type %>
+</p>
+
+<p>
+  <b>General rate:</b>
+  <%= @card.general_rate %>
+</p>
+
+<p>
+  <b>Threshold amount:</b>
+  <%= @card.threshold_amount %>
+</p>
+
+<p>
+  <b>Threshold rate:</b>
+  <%= @card.threshold_rate %>
+</p>
+
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

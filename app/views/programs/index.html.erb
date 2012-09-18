@@ -1,0 +1,33 @@
+<h1>Listing programs</h1>
+
+<table>
+  <tr>
+    <th>Card</th>
+    <th>Name</th>
+    <th>Start period</th>
+    <th>End period</th>
+    <th>Reward rate</th>
+    <th>Reward limit</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @programs.each do |program| %>
+  <tr>
+    <td><%= program.card_id %></td>
+    <td><%= program.name %></td>
+    <td><%= program.start_period %></td>
+    <td><%= program.end_period %></td>
+    <td><%= program.reward_rate %></td>
+    <td><%= program.reward_limit %></td>
+    <td><%= link_to 'Show', program %></td>
+    <td><%= link_to 'Edit', edit_program_path(program) %></td>
+    <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Program', new_program_path %>
