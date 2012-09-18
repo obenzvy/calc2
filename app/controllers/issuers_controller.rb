@@ -44,7 +44,7 @@ class IssuersController < ApplicationController
 
     respond_to do |format|
       if @issuer.save
-        format.html { redirect_to @issuer, notice: 'Issuer was successfully created.' }
+        format.html { redirect_to issuers_path, notice: 'Issuer was successfully created.' }
         format.json { render json: @issuer, status: :created, location: @issuer }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class IssuersController < ApplicationController
 
     respond_to do |format|
       if @issuer.update_attributes(params[:issuer])
-        format.html { redirect_to @issuer, notice: 'Issuer was successfully updated.' }
+        format.html { redirect_to issuers_path, notice: 'Issuer was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

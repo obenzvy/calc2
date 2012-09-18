@@ -1,4 +1,8 @@
 Calc2::Application.routes.draw do
+  resources :categories
+
+  resources :rewards
+
   resources :programs
 
   resources :cards
