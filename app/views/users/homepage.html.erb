@@ -1,0 +1,22 @@
+
+<%= form_tag homepage_path, :method => "get" do %>
+General Spend: <%= number_field_tag :general_spend, @general_spend %></br>
+Gas: <%= number_field_tag :gas, @gas %></br>
+Movies: <%= number_field_tag :movies, @movies %></br>
+Museums: <%= number_field_tag :museums, @museums %></br>
+Theme Parks: <%= number_field_tag :theme_parks, @theme_parks %></br>
+Restaurants: <%= number_field_tag :restaurants, @restaurants %></br>
+Department Stores: <%= number_field_tag :department_stores, @department_stores %></br>
+<%= submit_tag "Submit", :name => nil   %>
+<% end %>
+<br/>
+
+
+<%= @all %>
+
+<br>
+<ul>
+<% @all.each do |card| %>
+<li><%= card %></li>
+<% end %>
+</ul>

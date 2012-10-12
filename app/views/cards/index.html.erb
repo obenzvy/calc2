@@ -15,7 +15,7 @@
 
 <% @cards.each do |card| %>
   <tr>
-    <td><%= card.issuer_id %></td>
+    <td><%= card.issuer.name %></td>
     <td><%= card.name %></td>
     <td><%= card.rewards_type %></td>
     <td><%= card.general_rate %></td>
