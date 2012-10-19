@@ -3,15 +3,15 @@ class Issuer < ActiveRecord::Base
 
   has_many :cards
 
-  def card_details
-   self.cards.map { |card| card.card_details }
-  end
+  # def card_details amount
+  #  self.cards.map { |card| card.card_details(amount) }
+  # end
 
 
-  def issuer_hash
-   Hash["Name" => self.name,
-    "Cards" => card_details
-   ]
-  end
+  # def issuer_hash amount
+  #  Hash["Name" => self.name,
+  #   "Cards" => card_details(amount)
+  #  ]
+  # end
 
 end

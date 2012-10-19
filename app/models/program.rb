@@ -5,16 +5,26 @@ class Program < ActiveRecord::Base
   has_many :rewards 
   has_many :categories, :through => :rewards
 
+  def duration
+    (self.end_period.month - self.start_period.month + 1)
+  end
+
+  def category_rewards amount 
+    if amount >= self.reward_limit
+      self.reward_limit * reward_rate
+    else 
+      duration * amount * reward_rate
+    end
+  end 
+
   def program_details
   	self.categories.map { |category| category.name } 
   end
 
-  def program_hash
+  def program_hash amount
   	Hash[
   		"Category" => program_details,
-  		"Duration" => (self.end_period.month - self.start_period.month + 1),
-  		"Reward Rate" => self.reward_rate,
-  		"Reward Limit" => self.reward_limit
+  		"Reward Amount" => category_rewards(amount)
   	]
   end
 

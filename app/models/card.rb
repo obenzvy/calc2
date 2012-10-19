@@ -16,22 +16,23 @@ class Card < ActiveRecord::Base
 		end
 	end
 
-	def program_details
-		self.programs.map { |program| program.program_hash } 
-	end
+	# def program_details amount 
+	# 	self.programs.map { |program| program.program_hash(amount) } 
+	# end
 
-	def card_details
+	# def card_details general_amount, program_amount
+	# 		Hash["Name" => self.name,
+	# 		"Rewards Type" => self.rewards_type,
+	# 		"General Rewards" => general_rewards(general_amount),
+	# 		"Program" => self.program_details(program_amount)
+	# 	] 
+	# end
+	def card_details general_amount
 			Hash["Name" => self.name,
-			"General Rate" => self.general_rate,
 			"Rewards Type" => self.rewards_type,
-			"Threshold Amount" => self.threshold_amount,
-			"Threshold Rate" => self.threshold_rate,
-			"Program" => self.program_details
+			"General Rewards" => general_rewards(general_amount),
 		] 
 	end
 
-	def card_hash
-		Hash["#{self.name}" => card_details]
-	end
 
 end

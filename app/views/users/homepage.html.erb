@@ -3,6 +3,8 @@
 General Spend: <%= number_field_tag :general_spend, @general_spend %></br>
 Gas: <%= number_field_tag :gas, @gas %></br>
 Movies: <%= number_field_tag :movies, @movies %></br>
+Groceries: <%= number_field_tag :groceries, @groceries %></br>
+Travel: <%= number_field_tag :travel, @travel %> </br>
 Museums: <%= number_field_tag :museums, @museums %></br>
 Theme Parks: <%= number_field_tag :theme_parks, @theme_parks %></br>
 Restaurants: <%= number_field_tag :restaurants, @restaurants %></br>
@@ -10,13 +12,45 @@ Department Stores: <%= number_field_tag :department_stores, @department_stores %
 <%= submit_tag "Submit", :name => nil   %>
 <% end %>
 <br/>
-
-
-<%= @all %>
-
-<br>
+<br/>
+<div id="one">
 <ul>
-<% @all.each do |card| %>
-<li><%= card %></li>
-<% end %>
+	<li><%= @first[0] %></li>
+	<ul> 
+		<li>Rewards Type: <%= @first[1] %> </li>
+		<li>Total Rewards: $<%= @first[2] %> </li>
+		<ul>
+			<li>General Rewards: $<%= @first[3] %> </li>
+			<li>Category Rewards: $<%= @first[4] %> </li>
+		</ul>
+	</ul>
 </ul>
+</div>
+
+<div id="two">
+<ul>
+	<li><%= @second[0] %></li>
+	<ul> 
+		<li>Rewards Type: <%= @second[1] %> </li>
+		<li>Total Rewards: $<%= @second[2] %> </li>
+		<ul>
+			<li>General Rewards: $<%= @second[3] %> </li>
+			<li>Category Rewards: $<%= @second[4] %> </li>
+		</ul>
+	</ul>
+</ul>
+</div>
+
+<div id="three">
+<ul>
+	<li><%= @third[0] %></li>
+	<ul> 
+		<li>Rewards Type: <%= @third[1] %> </li>
+		<li>Total Rewards: $<%= @third[2] %> </li>
+		<ul>
+			<li>General Rewards: $<%= @third[3] %> </li>
+			<li>Category Rewards: $<%= @third[4] %> </li>
+		</ul>
+	</ul>
+</ul>
+</div>
