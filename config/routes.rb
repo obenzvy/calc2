@@ -1,5 +1,6 @@
 Calc2::Application.routes.draw do
   get "homepage" => "Users#homepage", :as => :homepage
+  get "habitfinance" => "Users#habitfinance", :as => :habitfinance
 
   resources :categories
 

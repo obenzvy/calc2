@@ -9,8 +9,24 @@ class Program < ActiveRecord::Base
     (self.end_period.month - self.start_period.month + 1)
   end
 
+  def reward_limit_check
+    if self.reward_limit === 0
+      self.reward_limit = 10000000000000000000000
+    else
+      self.reward_limit
+    end
+  end
+
+  def excess_spend amount
+    if amount * self.duration >= reward_limit_check
+        ((amount * self.duration) - self.reward_limit) / self.duration
+      else 
+        0
+    end
+  end
+
   def category_rewards amount 
-    if amount >= self.reward_limit
+    if amount * self.duration >= reward_limit_check
       self.reward_limit * reward_rate
     else 
       duration * amount * reward_rate
@@ -24,7 +40,8 @@ class Program < ActiveRecord::Base
   def program_hash amount
   	Hash[
   		"Category" => program_details,
-  		"Reward Amount" => category_rewards(amount)
+  		"Reward Amount" => category_rewards(amount),
+      "Excess Rewards" => excess_spend(amount)
   	]
   end
 

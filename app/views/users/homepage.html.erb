@@ -1,16 +1,40 @@
 
 <%= form_tag homepage_path, :method => "get" do %>
+</br>
+ <script>
+    $(function() {
+        $( "#accordion" ).accordion({ icons: false});
+    });
+    </script>
+<div id="accordion">
+    <h3>General Spend</h3>
+    <div>
 General Spend: <%= number_field_tag :general_spend, @general_spend %></br>
-Gas: <%= number_field_tag :gas, @gas %></br>
-Movies: <%= number_field_tag :movies, @movies %></br>
-Groceries: <%= number_field_tag :groceries, @groceries %></br>
+    </div>
+    <h3>Travel</h3>
+    <div>
 Travel: <%= number_field_tag :travel, @travel %> </br>
+Gas: <%= number_field_tag :gas, @gas %></br>
+Airlines: <%= number_field_tag :airlines, @airlines %></br>
+Delta: <%= number_field_tag :delta, @delta %>
+    </div>
+    <h3>Entertainment</h3>
+    <div>
+Movies: <%= number_field_tag :movies, @movies %></br>
 Museums: <%= number_field_tag :museums, @museums %></br>
 Theme Parks: <%= number_field_tag :theme_parks, @theme_parks %></br>
-Restaurants: <%= number_field_tag :restaurants, @restaurants %></br>
 Department Stores: <%= number_field_tag :department_stores, @department_stores %></br>
+	</div>
+    <h3>Food</h3>
+    <div>
+Groceries: <%= number_field_tag :groceries, @groceries %></br>
+Restaurants: <%= number_field_tag :restaurants, @restaurants %></br>
+    </div>
+</div>
 <%= submit_tag "Submit", :name => nil   %>
 <% end %>
+
+<br/>
 <br/>
 <br/>
 <div id="one">

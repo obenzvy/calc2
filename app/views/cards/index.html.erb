@@ -31,3 +31,37 @@
 <br />
 
 <%= link_to 'New Card', new_card_path %>
+<%= link_to "Issuers", issuers_path %>
+<%= link_to "Programs", programs_path %>
+<%= link_to "Rewards", rewards_path %>
+<%= link_to "Categories", categories_path %>
+</br>
+
+<%= form_tag homepage_path, :method => "get" do %>
+</br>
+ <script>
+    $(function() {
+        $( "#accordion" ).accordion();
+    });
+    </script>
+<div id="accordion">
+    <h3>Section 1</h3>
+    <div>
+General Spend: <%= number_field_tag :general_spend, @general_spend %></br>
+Gas: <%= number_field_tag :gas, @gas %></br>
+Movies: <%= number_field_tag :movies, @movies %></br>
+Groceries: <%= number_field_tag :groceries, @groceries %></br>
+Travel: <%= number_field_tag :travel, @travel %> </br>
+Museums: <%= number_field_tag :museums, @museums %></br>
+    </div>
+    <h3>Section 2</h3>
+    <div>
+Theme Parks: <%= number_field_tag :theme_parks, @theme_parks %></br>
+Restaurants: <%= number_field_tag :restaurants, @restaurants %></br>
+Airlines: <%= number_field_tag :airlines, @airlines %>
+Delta: <%= number_field_tag :delta, @delta %>
+Department Stores: <%= number_field_tag :department_stores, @department_stores %></br>
+Travel: <%= number_field_tag :travel, @travel %>
+    </div>
+<%= submit_tag "Submit", :name => nil   %>
+<% end %>
